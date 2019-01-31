@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-modal-element',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
+
 export class AppComponent {
-  title = 'modal-element';
+ @Input() name = 'friend';
+ focus: string;
+ focusSet = false;
+ setFocus(value) {
+   this.focus = value;
+   this.focusSet = true;
+ }
 }
